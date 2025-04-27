@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Implementation | MamaGuardian AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0078d4;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+        
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #e74c3c;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/300') center/cover no-repeat;
+            padding: 4rem 0;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        section {
+            padding: 3rem 0;
+            background-color: #fff;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f1f1f1;
+        }
+        
+        .model-explanation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .model-text, .model-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .model-image img, .app-screenshot img, .diagram img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            flex: 1;
+            min-width: 250px;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: #e74c3c;
+        }
+        
+        .app-screenshots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .app-screenshot {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+        }
+        
+        .app-screenshot p {
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        .pilot-program {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .pilot-program h3 {
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/40/40" alt="MamaGuardian AI Logo">
+                <h1>MamaGuardian AI</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/home/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="technical.html">Implementation</a></li>
+                    <li><a href="/team/">Team</a></li>
+                    <li><a href="/home/#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Technical Implementation</h1>
+            <p>How our AI-powered solution works to save lives</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <section>
+            <div class="section-title">
+                <h2>Machine Learning Model</h2>
+            </div>
+            <div class="model-explanation">
+                <div class="model-text">
+                    <h3>How Our AI Predicts Risk</h3>
+                    <p>MamaGuardian AI uses supervised machine learning to analyze maternal health data and identify high-risk pregnancies before complications arise. Our model has been trained on comprehensive datasets including:</p>
+                    <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                        <li>Kenya Demographic and Health Survey (KDHS) data</li>
+                        <li>Kaggle's Maternal Health Risk dataset</li>
+                        <li>Anonymized patient records from partner clinics</li>
+                    </ul>
+                    <p>The system analyzes key indicators such as blood pressure, age, previous pregnancy complications, hemoglobin levels, and geographical factors to generate a risk score between 0-100%, classifying each pregnancy as Low, Medium, or High risk.</p>
+                </div>
+                <div class="model-image">
+                    <img src="/api/placeholder/500/300" alt="AI Model Visualization">
+                </div>
+            </div>
+            
+            <div class="tech-features">
+                <div class="feature-card">
+                    <h3>Accuracy</h3>
+                    <p>Our model achieves 90% accuracy in predicting high-risk pregnancies, with sensitivity and specificity values exceeding WHO benchmarks for maternal risk assessment tools.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Offline Capability</h3>
+                    <p>Built for rural Kenya, the application works offline and syncs when internet connectivity is available, ensuring continuity in remote areas.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Real-time Alerts</h3>
+                    <p>The system generates automatic SMS alerts to both patients and community health workers when risk levels change significantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">
+                <h2>Mobile App & Dashboard</h2>
+            </div>
+            <p>Our solution includes two key interfaces: a mobile application for data collection and monitoring, and a web dashboard for healthcare administrators.</p>
+            
+            <div class="app-screenshots">
+                <div class="app-screenshot">
+                    <img src="/api/placeholder/300/600" alt="Mobile App Screenshot">
+                    <p>Mobile app for Community Health Volunteers</p>
+                </div>
+                <div class="app-screenshot">
+                    <img src="/api/placeholder/500/300" alt="Dashboard Screenshot">
+                    <p>Web dashboard for clinics and hospitals</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">Key Features</h3>
+            <div class="tech-features">
+                <div class="feature-card">
+                    <h3>User-Friendly Data Entry</h3>
+                    <p>Simple forms designed for CHVs with varying levels of technical expertise, supporting multiple languages including Swahili.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Risk Visualization</h3>
+                    <p>Color-coded risk indicators and trend graphs show changes over time, making it easy to spot deteriorating conditions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Resource Allocation Tools</h3>
+                    <p>Heat maps highlight areas with high concentrations of at-risk mothers, helping county health teams allocate ambulances and staff effectively.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">
+                <h2>System Architecture</h2>
+            </div>
+            <div class="diagram">
+                <img src="/api/placeholder/800/400" alt="System Architecture Diagram">
+            </div>
+            <p style="margin-top: 1.5rem;">Our system architecture follows a client-server model with secure data storage and processing:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li><strong>Frontend:</strong> React Native mobile app and React web dashboard</li>
+                <li><strong>Backend:</strong> FastAPI server for API endpoints and ML model hosting</li>
+                <li><strong>Database:</strong> MongoDB for storing patient data with end-to-end encryption</li>
+                <li><strong>SMS Gateway:</strong> Integration with Africa's Talking API for alerts</li>
+                <li><strong>ML Pipeline:</strong> Python-based data processing with scikit-learn and XGBoost</li>
+            </ul>
+            
+            <div class="pilot-program">
+                <h3>Pilot Program</h3>
+                <p>We are currently piloting MamaGuardian AI in two counties in Kenya:</p>
+                <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                    <li><strong>Vihiga County:</strong> Working with 50 CHVs and 5 health facilities</li>
+                    <li><strong>Turkana County:</strong> Partnering with 30 CHVs and 3 nomadic health clinics</li>
+                </ul>
+                <p style="margin-top: 1rem;">Initial results show a 35% improvement in early referrals for high-risk cases and a 28% reduction in emergency transport times when the system identifies urgent cases.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MamaGuardian AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
