@@ -1,381 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team | MamaGuardian AI</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0078d4;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 0;
-        }
-        
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .logo h1 {
-            font-size: 1.5rem;
-            color: #e74c3c;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-        
-        nav ul li a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .page-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/300') center/cover no-repeat;
-            padding: 4rem 0;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        section {
-            padding: 3rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            color: #333;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background-color: #e74c3c;
-            bottom: 0;
-            left: 25%;
-        }
-        
-        .team-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-        
-        .team-member {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            transition: transform 0.3s ease;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-5px);
-        }
-        
-        .member-image {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .member-info {
-            padding: 1.5rem;
-        }
-        
-        .member-info h3 {
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-        
-        .member-role {
-            color: #e74c3c;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        .member-bio {
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        
-        .partner-section {
-            background-color: #fff;
-            padding: 3rem 0;
-            margin-top: 3rem;
-        }
-        
-        .partners-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .partner {
-            width: 180px;
-            height: 100px;
-            background-color: #f9f9f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        
-        .partner img {
-            max-width: 80%;
-            max-height: 80%;
-        }
-        
-        .contact-section {
-            background-color: #f5f5f5;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .contact-methods {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-method {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            width: 250px;
-        }
-        
-        .contact-method h3 {
-            margin-bottom: 1rem;
-            color: #e74c3c;
-        }
-        
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <img src="/api/placeholder/40/40" alt="MamaGuardian AI Logo">
-                <h1>MamaAfya AI</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/home/">Home</a></li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="technical.html">Implementation</a></li>
-                    <li><a href="/team/">Team</a></li>
-                    <li><a href="/home/#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+{% extends 'base.html' %}
+{% load static %}
 
-    <div class="page-header">
-        <div class="container">
-            <h1>Meet Our Team</h1>
-            <p>The experts behind MamaGuardian AI</p>
+{% block title %}Team | MamaGuardian AI{% endblock %}
+
+{% block content %}
+<div class="bg-dark text-white text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('{% static "images/team-banner.jpg" %}') center/cover no-repeat;">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Meet Our Team</h1>
+        <p class="lead">The experts behind MamaGuardian AI</p>
+    </div>
+</div>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Team</h2>
+            <p class="text-muted">Dedicated professionals driving innovation in maternal health</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+
+            {% comment %} Team Member Cards {% endcomment %}
+            {% for member in team %}
+            <div class="col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static member.image %}" class="card-img-top" alt="{{ member.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ member.name }}</h5>
+                        <h6 class="text-danger fw-semibold">{{ member.role }}</h6>
+                        <p class="card-text small">{{ member.bio }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
+</section>
 
-    <section>
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Team</h2>
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Our Partners</h2>
+        <p class="mb-4">We collaborate with national and international organizations to maximize our impact.</p>
+        <div class="row justify-content-center g-4">
+            {% for partner in partners %}
+            <div class="col-6 col-sm-4 col-md-2">
+                <img src="{% static partner.logo %}" alt="{{ partner.name }}" class="img-fluid">
             </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="/api/placeholder/300/300" alt="Eucabeth Awino">
-                    </div>
-                    <div class="member-info">
-                        <h3>Eucabeth Awino</h3>
-                        <span class="member-role">Project Lead</span>
-                        <p class="member-bio">Eucabeth brings extensive experience in public health management, having previously worked with the Ministry of Health on maternal health initiatives in rural Kenya. She oversees project strategy, stakeholder engagement, and implementation planning.</p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="/api/placeholder/300/300" alt="Lemmis Murangiri">
-                    </div>
-                    <div class="member-info">
-                        <h3>Lemmis Murangiri</h3>
-                        <span class="member-role">AI/ML Engineer</span>
-                        <p class="member-bio">Lemmis specializes in developing machine learning models for healthcare applications. He leads the AI component of MamaGuardian, training and optimizing the predictive algorithms that power our risk assessment system.</p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="/api/placeholder/300/300" alt="Denis Munene Ndegwa">
-                    </div>
-                    <div class="member-info">
-                        <h3>Denis Munene Ndegwa</h3>
-                        <span class="member-role">Full Stack developer</span>
-                        <p class="member-bio"></p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="/api/placeholder/300/300" alt="Faith Wanjiru Mwangi">
-                    </div>
-                    <div class="member-info">
-                        <h3>Faith Wanjiru Mwangi</h3>
-                        <span class="member-role">UX Researcher</span>
-                        <p class="member-bio">Faith conducts field research with community health volunteers and expectant mothers to ensure our solution addresses real needs. Her insights drive continuous improvements to the app's interface and workflows.</p>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="/api/placeholder/300/300" alt="Felix Kipkirui Rotich">
-                    </div>
-                    <div class="member-info">
-                        <h3>Felix Kipkirui Rotich</h3>
-                        <span class="member-role">Data Scientist</span>
-                        <p class="member-bio">Felix specializes in healthcare data analysis and visualization. He manages our data pipeline, ensuring model accuracy and developing the analytical dashboards used by health administrators.</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="partner-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Partners</h2>
-            </div>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto;">MamaGuardian AI collaborates with healthcare providers, government agencies, and technology partners to maximize our impact across Kenya.</p>
-            
-            <div class="partners-grid">
-                <div class="partner">
-                    <img src="/api/placeholder/150/80" alt="Ministry of Health Kenya">
-                </div>
-                <div class="partner">
-                    <img src="/api/placeholder/150/80" alt="UNICEF">
-                </div>
-                <div class="partner">
-                    <img src="/api/placeholder/150/80" alt="AMREF Health Africa">
-                </div>
-                <div class="partner">
-                    <img src="/api/placeholder/150/80" alt="Safaricom">
-                </div>
-                <div class="partner">
-                    <img src="/api/placeholder/150/80" alt="Vihiga County">
-                </div>
-                <div class="partner">
-                    <img src="/api/placeholder/150/80" alt="Turkana County">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-            </div>
-            <p style="max-width: 700px; margin: 0 auto;">Interested in learning more about MamaGuardian AI or exploring partnership opportunities? Reach out to our team.</p>
-            
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <h3>Email</h3>
+<section class="bg-light py-5" id="contact">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Contact Us</h2>
+        <p class="mb-4">Interested in our work or want to partner with us?</p>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-3">
+                <div class="bg-white p-4 rounded shadow-sm h-100">
+                    <h5 class="text-danger">Email</h5>
                     <p>info@mamaguardian.org</p>
                 </div>
-                <div class="contact-method">
-                    <h3>Phone</h3>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-white p-4 rounded shadow-sm h-100">
+                    <h5 class="text-danger">Phone</h5>
                     <p>+254 700 123 456</p>
                 </div>
-                <div class="contact-method">
-                    <h3>Office</h3>
-                    <p>iHub, Nairobi<br>Nairobi, Kenya</p>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-white p-4 rounded shadow-sm h-100">
+                    <h5 class="text-danger">Office</h5>
+                    <p>iHub, Nairobi<br>Kenya</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 MamaGuardian AI. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+    </div>
+</section>
+{% endblock %}
