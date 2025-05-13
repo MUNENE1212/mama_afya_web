@@ -16,8 +16,10 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from core import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
 
@@ -26,6 +28,11 @@ urlpatterns = [
     path('home/', views.home, name='home'),      # Optional: you can keep /home/ too if you want
     path('about/', views.about, name='about'),
     path('team/', views.team, name='team'),
-    path('technical/', views.technical, name='technical'),  # Or whatever view you mapped
-]
+    path('technical/', views.technical, name='technical'),
+    ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 

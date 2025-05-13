@@ -14,7 +14,7 @@ COPY . /app/
 # Install dependencies
 RUN pip install --upgrade pip
 RUN pip install django
-
+RUN ls -al
 # (Optional: install other packages if you need them)
 # RUN pip install -r requirements.txt
 
